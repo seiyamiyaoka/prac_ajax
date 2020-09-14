@@ -1,0 +1,12 @@
+document.getElementById("comments").append(createList("<%= @comment.content %>"))
+resetInput()
+
+function createList(content) {
+  const list = document.createElement('li');
+  list.innerHTML = content
+  return list
+}
+
+function resetInput() {
+  document.getElementById("comment_content").value = ""
+}

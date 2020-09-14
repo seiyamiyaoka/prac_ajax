@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<ul id="comments">
+  <%= render @comments %>
+</ul>
+
+<br>
+
+<%= form_with(model: @comment, url: book_comments_path(@book)) do |f| %>
+  <%= f.label :content %><br>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
